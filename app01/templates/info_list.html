@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Info List</h1>
+
+    <a href="/info/add/">ADD USER</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>name</th>
+                <th>password</th>
+                <th>age</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for obj in data_list %}
+
+            <tr>
+                <td>{{obj.id}}</td>
+                <td>{{obj.name}}</td>
+                <td>{{obj.password}}</td>
+                <td>{{obj.age}}</td>
+                <td>
+                    <a href="/info/delete/?nid={{obj.id}}">DELETE</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+
+</html>
